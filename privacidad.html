@@ -9,7 +9,7 @@
 <body>
 <main>
   <h1>Política de privacidad</h1>
-  <p class="bajada">NASBot · vigente desde el 14 de noviembre de 2026.</p>
+  <p class="bajada">NASBot · vigente desde el 15 de noviembre de 2026.</p>
 
   <h2>Resumen</h2>
   <div class="caja">
@@ -29,13 +29,18 @@
     <li>etiquetas de Gmail (por ejemplo, si el mensaje cayó en Promociones).</li>
   </ul>
   <p>Ese permiso <strong>no habilita el acceso al cuerpo de los mensajes</strong>,
-  ni a adjuntos, ni a contactos, ni a ningún otro servicio de Google. Tampoco
-  permite enviar, modificar ni eliminar correo.</p>
+  ni a adjuntos, ni a contactos. Tampoco permite enviar, modificar ni eliminar
+  correo.</p>
+  <p>Además accede a la Google Calendar API con el permiso
+  <code>calendar.events.readonly</code>, también de solo lectura, para leer el
+  título y el horario de los eventos del día. No puede crear, modificar ni
+  borrar eventos.</p>
 
   <h2>Para qué se usa</h2>
-  <p>Exclusivamente para generar un resumen de los correos recientes y enviarlo
-  al chat privado de Telegram del propio titular de la cuenta. No se usa para
-  publicidad, perfilado, entrenamiento de modelos ni ningún otro fin.</p>
+  <p>Exclusivamente para generar un resumen diario de los correos recientes y
+  de los eventos del día, y enviarlo al chat privado de Telegram del propio
+  titular de la cuenta. No se usa para publicidad, perfilado, entrenamiento de
+  modelos ni ningún otro fin.</p>
 
   <h2>Dónde se procesa</h2>
   <p>En un servidor doméstico propiedad del autor, ubicado en su casa. No hay
@@ -43,8 +48,8 @@
   terceros alojando esta información.</p>
 
   <h2>Qué se almacena</h2>
-  <p>Del correo no se guarda nada. Los metadatos se procesan en memoria y se
-  descartan una vez enviado el resumen.</p>
+  <p>Del correo y del calendario no se guarda nada. Los datos se procesan en
+  memoria y se descartan una vez enviado el resumen.</p>
   <p>Lo único que persiste en la base de datos local es una marca de tiempo (la
   fecha interna del último mensaje ya resumido), para no repetir mensajes en el
   resumen siguiente. No contiene remitentes, asuntos ni texto de ningún correo.</p>
@@ -53,7 +58,8 @@
   <p>Para decidir qué mensajes merecen atención, el remitente y el asunto se
   envían a un proveedor de modelos de lenguaje mediante su API. Nunca se envía
   el cuerpo de los mensajes, porque el permiso solicitado a Google no da acceso
-  a él. Fuera de ese proveedor y de la propia API de Telegram, que transporta el
+  a él. Los eventos del calendario no se envían a ningún modelo: van directo al
+  resumen. Fuera de ese proveedor y de la propia API de Telegram, que transporta el
   resumen hasta el chat del titular, no interviene ningún otro tercero.</p>
 
   <h2>Uso limitado de los datos de Google</h2>
@@ -76,8 +82,8 @@
   <h2>Cómo revocar el acceso</h2>
   <p>En cualquier momento, desde
   <a href="https://myaccount.google.com/permissions">la página de permisos de la
-  cuenta de Google</a>. Al hacerlo, NASBot deja de poder leer metadatos de
-  inmediato.</p>
+  cuenta de Google</a>. Al hacerlo, NASBot deja de tener acceso de
+  inmediato a los metadatos del correo y a los eventos del calendario.</p>
 
   <h2>Menores</h2>
   <p>El software no está dirigido a menores de edad ni recolecta información de

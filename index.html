@@ -24,9 +24,12 @@
   </ul>
 
   <h2>Qué datos de Google usa, y para qué</h2>
-  <p>Para la última función de esa lista, NASBot puede leer la casilla de Gmail
-  de su dueño a través de la API oficial de Google, usando el permiso
-  <code>gmail.metadata</code>.</p>
+  <p>Para el resumen diario, NASBot usa la API oficial de Google con dos
+  permisos de solo lectura sobre la cuenta de su dueño:</p>
+  <ul>
+    <li><code>gmail.metadata</code>: para contar y resumir el correo nuevo.</li>
+    <li><code>calendar.events.readonly</code>: para listar los eventos del día.</li>
+  </ul>
 
   <div class="caja">
     <p><strong>Ese permiso da acceso únicamente a los metadatos de los mensajes:
@@ -36,8 +39,11 @@
     no lo habilita.</p>
   </div>
 
-  <p>Con esos metadatos arma un resumen de lo que llegó y lo envía al chat
-  privado de Telegram de su dueño, destacando facturas y vencimientos. Nada más.</p>
+  <p>Del calendario solo lee los eventos del día, en modo lectura: no puede
+  crear, cambiar ni borrar ninguno.</p>
+
+  <p>Con eso arma un resumen de lo que llegó y de lo que hay en el día, y lo
+  envía al chat privado de Telegram de su dueño. Nada más.</p>
 
   <h2>Quién lo usa</h2>
   <p>Una sola persona: el autor del software, sobre su propia cuenta. No se
@@ -48,7 +54,7 @@
     <a href="terminos.html">Condiciones del servicio</a>
     <a href="https://github.com/iFacuFerra">GitHub del autor</a>
   </nav>
-  <footer>Última actualización: 14 de noviembre de 2026.</footer>
+  <footer>Última actualización: 15 de noviembre de 2026.</footer>
 </main>
 </body>
 </html>
