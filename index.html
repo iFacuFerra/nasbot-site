@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NASBot</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+  <h1>NASBot</h1>
+  <p class="bajada">Bot de Telegram personal para administrar un servidor doméstico. Software privado, de un solo usuario: su propio autor.</p>
+
+  <h2>Qué hace</h2>
+  <p>NASBot corre como contenedor en un NAS hogareño (TrueNAS SCALE) y responde
+  por Telegram únicamente a su dueño. Sus funciones:</p>
+  <ul>
+    <li>Estado del servidor: discos, temperaturas, pools de almacenamiento y alertas del sistema.</li>
+    <li>Aviso automático si una aplicación se cae o si una tarea de mantenimiento falla.</li>
+    <li>Navegación y descarga de archivos del propio NAS, detrás de un PIN.</li>
+    <li>Recordatorios y vencimientos de servicios.</li>
+    <li>Notas personales con búsqueda.</li>
+    <li>Un resumen diario que reúne la agenda del día, los vencimientos próximos, el estado del servidor y el correo nuevo.</li>
+  </ul>
+
+  <h2>Qué datos de Google usa, y para qué</h2>
+  <p>Para la última función de esa lista, NASBot puede leer la casilla de Gmail
+  de su dueño a través de la API oficial de Google, usando el permiso
+  <code>gmail.metadata</code>.</p>
+
+  <div class="caja">
+    <p><strong>Ese permiso da acceso únicamente a los metadatos de los mensajes:
+    remitente, asunto, fecha y etiquetas.</strong></p>
+    <p>No da acceso al contenido de los correos. NASBot tampoco puede enviar,
+    responder, borrar, archivar ni marcar nada como leído: el permiso elegido
+    no lo habilita.</p>
+  </div>
+
+  <p>Con esos metadatos arma un resumen de lo que llegó y lo envía al chat
+  privado de Telegram de su dueño, destacando facturas y vencimientos. Nada más.</p>
+
+  <h2>Quién lo usa</h2>
+  <p>Una sola persona: el autor del software, sobre su propia cuenta. No se
+  ofrece a terceros, no tiene registro de usuarios y no se distribuye.</p>
+
+  <nav>
+    <a href="privacidad.html">Política de privacidad</a>
+    <a href="terminos.html">Condiciones del servicio</a>
+    <a href="https://github.com/iFacuFerra">GitHub del autor</a>
+  </nav>
+  <footer>Última actualización: 14 de noviembre de 2026.</footer>
+</main>
+</body>
+</html>

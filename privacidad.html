@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · NASBot</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+  <h1>Política de privacidad</h1>
+  <p class="bajada">NASBot · vigente desde el 14 de noviembre de 2026.</p>
+
+  <h2>Resumen</h2>
+  <div class="caja">
+    <p>NASBot es una herramienta personal que usa una sola persona sobre su
+    propia cuenta de Google. No recolecta datos de terceros, no tiene usuarios
+    además de su autor, y no vende, alquila ni comparte información con nadie.</p>
+  </div>
+
+  <h2>Qué información se accede</h2>
+  <p>Con autorización explícita del titular de la cuenta, NASBot accede a la
+  Gmail API con el permiso <code>gmail.metadata</code>, que es de solo lectura y
+  se limita a:</p>
+  <ul>
+    <li>remitente del mensaje;</li>
+    <li>asunto;</li>
+    <li>fecha;</li>
+    <li>etiquetas de Gmail (por ejemplo, si el mensaje cayó en Promociones).</li>
+  </ul>
+  <p>Ese permiso <strong>no habilita el acceso al cuerpo de los mensajes</strong>,
+  ni a adjuntos, ni a contactos, ni a ningún otro servicio de Google. Tampoco
+  permite enviar, modificar ni eliminar correo.</p>
+
+  <h2>Para qué se usa</h2>
+  <p>Exclusivamente para generar un resumen de los correos recientes y enviarlo
+  al chat privado de Telegram del propio titular de la cuenta. No se usa para
+  publicidad, perfilado, entrenamiento de modelos ni ningún otro fin.</p>
+
+  <h2>Dónde se procesa</h2>
+  <p>En un servidor doméstico propiedad del autor, ubicado en su casa. No hay
+  servicio en la nube, ni base de datos compartida, ni infraestructura de
+  terceros alojando esta información.</p>
+
+  <h2>Qué se almacena</h2>
+  <p>Del correo no se guarda nada. Los metadatos se procesan en memoria y se
+  descartan una vez enviado el resumen.</p>
+  <p>Lo único que persiste en la base de datos local es una marca de tiempo (la
+  fecha interna del último mensaje ya resumido), para no repetir mensajes en el
+  resumen siguiente. No contiene remitentes, asuntos ni texto de ningún correo.</p>
+
+  <h2>Terceros</h2>
+  <p>Para decidir qué mensajes merecen atención, el remitente y el asunto se
+  envían a un proveedor de modelos de lenguaje mediante su API. Nunca se envía
+  el cuerpo de los mensajes, porque el permiso solicitado a Google no da acceso
+  a él. Fuera de ese proveedor y de la propia API de Telegram, que transporta el
+  resumen hasta el chat del titular, no interviene ningún otro tercero.</p>
+
+  <h2>Uso limitado de los datos de Google</h2>
+  <div class="caja">
+    <p>El uso que NASBot hace de la información recibida de las APIs de Google
+    se ajusta a la
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Política
+    de Datos de Usuario de los Servicios API de Google</a>, incluidos sus
+    requisitos de Uso Limitado.</p>
+  </div>
+
+  <h2>Seguridad</h2>
+  <p>Las credenciales de acceso viven en un archivo de configuración legible
+  solo por el administrador del servidor. NASBot no almacena la contraseña de la
+  cuenta de Google: la autorización se hace por OAuth y en el servidor queda
+  únicamente un token de actualización, que puede revocarse sin afectar la
+  contraseña ni el resto de la cuenta. El bot responde solo a identificadores de
+  Telegram autorizados; cualquier otro queda sin respuesta.</p>
+
+  <h2>Cómo revocar el acceso</h2>
+  <p>En cualquier momento, desde
+  <a href="https://myaccount.google.com/permissions">la página de permisos de la
+  cuenta de Google</a>. Al hacerlo, NASBot deja de poder leer metadatos de
+  inmediato.</p>
+
+  <h2>Menores</h2>
+  <p>El software no está dirigido a menores de edad ni recolecta información de
+  ellos.</p>
+
+  <h2>Cambios</h2>
+  <p>Si la política cambia, se actualiza esta página junto con su fecha de
+  vigencia.</p>
+
+  <h2>Contacto</h2>
+  <p>A través del perfil del autor en
+  <a href="https://github.com/iFacuFerra">GitHub</a>.</p>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="terminos.html">Condiciones del servicio</a>
+  </nav>
+</main>
+</body>
+</html>
